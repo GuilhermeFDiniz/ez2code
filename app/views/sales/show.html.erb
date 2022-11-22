@@ -1,0 +1,7 @@
+<h1>Show Sales</h1>
+
+
+<%= @sales.each do |sale| %>
+<%= sale.product.name %>
+<%= sale.user.email %>
+<%= end %>
