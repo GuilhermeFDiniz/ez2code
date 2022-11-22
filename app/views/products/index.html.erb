@@ -1,0 +1,7 @@
+<h1>Index Product</h1>
+<%@products.each do |product|%>
+<%=link_to %>
+<%=product.name%>
+<%=product.price%>
+<%=product.user.first_name%>
+<%end%>
