@@ -5,4 +5,4 @@
 <%= @product.details %>
 <%= @product.user.first_name %>
 
-<%= button_to 'Buy', product_sales_path(@product), data: {turbo_method: :post} %>
+<%= button_to 'Buy', product_sales_path(@product), data: {turbo_method: :post} unless @product.user == current_user %>
