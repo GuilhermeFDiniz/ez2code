@@ -1,0 +1,10 @@
+<h1>User_Products View</h1>
+
+<% @products.each do |product| %>
+<div>
+<%= product.name  %>
+<%= product.details %>
+<%= product.price %>
+<%= link_to 'edit', edit_product_path(product.id) %>
+</div>
+<% end %>
