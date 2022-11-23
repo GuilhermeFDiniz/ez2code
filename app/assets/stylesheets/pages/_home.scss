@@ -1,5 +1,10 @@
-// Specific CSS for your home-page
-.footer_avatar {
+.team {
+  display:flex;
+  justify-content: center;
+}
+
+
+.team_avatar {
   border-radius: 50%;
   width: 50px;
 }
@@ -8,4 +13,3 @@
   background-color: rgb(73, 73, 73);
   display: flex;
 }
-
