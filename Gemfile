@@ -30,6 +30,8 @@ gem "jbuilder"
 gem "devise"
 
 gem 'popper_js', '~> 2.11.5'
+
+gem "dotenv-rails", groups: [:development, :test]
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
