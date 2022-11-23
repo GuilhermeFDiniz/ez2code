@@ -36,6 +36,7 @@
               <%= link_to 'LogOut', destroy_user_session_path, class: "dropdown-item", data: {turbo_method: :delete} %>
               <%= link_to "Sell a Product", new_product_path, class: "dropdown-item"  %>
               <%= link_to "My Products", user_products_path %>
+              <%= link_to "My orders", user_sales_path %>
             </div>
           </li>
         <% else %>
