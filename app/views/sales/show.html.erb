@@ -1,7 +1,6 @@
 <h1>Show Sales</h1>
 
+<h1>Payment Confirmed!</h1>
 
-<%= @sales.each do |sale| %>
-<%= sale.product.name %>
-<%= sale.user.email %>
-<%= end %>
+<h2>Congratulations, <%=current_user.first_name%>,
+you just purchased the <%=@sale.product.name%> from <%=@sale.product.user.first_name%>.</h2>

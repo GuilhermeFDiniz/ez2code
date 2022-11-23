@@ -15,8 +15,8 @@ class ProductsController < ApplicationController
 
   def create
     @product = Product.new(product_params)
+    @product.user_id = current_user.id
     @product.save
-
     if @product.save
       redirect_to @product, notice: "Product was successfully created."
     else
@@ -38,6 +38,10 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     redirect_to root_path, notice: "Product was successfully destroyed."
+  end
+
+  def user_products
+    @products = Product.where(user_id: current_user.id)
   end
 
   private

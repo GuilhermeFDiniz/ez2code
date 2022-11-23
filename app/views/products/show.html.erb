@@ -1,6 +1,8 @@
 <h1>Show Products</h1>
 
-<%= @products.each do |product| %>
-<%= product.name %>
+<%= @product.name %>
+<%= @product.price %>
+<%= @product.details %>
+<%= @product.user.first_name %>
 
-<%= end %>
+<%= button_to 'Buy', product_sales_path(@product), data: {turbo_method: :post} unless @product.user == current_user %>
