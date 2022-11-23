@@ -40,6 +40,10 @@ class ProductsController < ApplicationController
     redirect_to root_path, notice: "Product was successfully destroyed."
   end
 
+  def user_products
+    @products = Product.where(user_id: current_user.id)
+  end
+
   private
 
   def set_product
