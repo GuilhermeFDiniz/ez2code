@@ -1,5 +1,8 @@
 <h1>Show Products</h1>
 
 <%= @product.name %>
+<%= @product.price %>
+<%= @product.details %>
+<%= @product.user.first_name %>
 
 <%= button_to 'Buy', product_sales_path(@product), data: {turbo_method: :post} %>
