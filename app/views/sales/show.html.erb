@@ -2,5 +2,5 @@
 
 <h1>Payment Confirmed!</h1>
 
-<h2>Congratulations, <%=current_user.email%>,
-you just purchased the <%=@sale.product.name%></h2>
+<h2>Congratulations, <%=current_user.first_name%>,
+you just purchased the <%=@sale.product.name%> from <%=@sale.product.user.first_name%>.</h2>
