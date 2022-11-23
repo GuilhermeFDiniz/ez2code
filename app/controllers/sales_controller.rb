@@ -1,5 +1,14 @@
 class SalesController < ApplicationController
 def show
-  @sales = Sales.all
+ @sale = Sale.find(params[:id])
 end
+
+def create
+    @product = Product.find(params[:product_id])
+    @user = current_user
+    @sale = Sale.new(product: @product, user: @user)
+    if @sale.save
+      redirect_to product_sale_path(@product, @sale)
+    end
+  end
 end
