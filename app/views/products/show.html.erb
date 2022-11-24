@@ -1,16 +1,20 @@
 <div class="container card-box">
   <div class="card mb-3 card-show">
-    <div class="row px-5 g-0">
+    <div class="row g-0">
       <div class="col-md-6">
-        <img src="..." class="img-fluid rounded-start" alt="...">
+        <%= cl_image_tag @product.photos.first.key, class:"img-fluid rounded-start", crop: :fill %>
       </div>
       <div class="col-md-6">
         <div class="card-body">
-          <h3 class="card-title"><%= @product.name %></h3>
-          <h4 class="card-price"><%= number_to_currency(@product.price, unit: "R$") %></h4>
-          <p class="card-text"><%= @product.details %></p>
-          <p class="card-text"><small class="text-muted"><%= "Vendido por: #{@product.user.first_name}" %></small></p>
-          <%= button_to 'Buy', product_sales_path(@product), class:"btn btn-primary"%>
+          <div class="card-name-price">
+            <h3 class="card-title"><%= @product.name %></h3>
+            <h4 class="card-price"><%= number_to_currency(@product.price, unit: "R$") %></h4>
+          </div>
+          <div class="card-details-saller-button">
+            <p class="card-text"><%= @product.details %></p>
+            <p class="card-text"><small class="text-muted"><%= "Vendido por: #{@product.user.first_name}" %></small></p>
+            <%= button_to 'Buy', product_sales_path(@product), class:"btn btn-primary", data: {turbo_method: :post} unless @product.user == current_user%>
+          </div>
         </div>
       </div>
     </div>

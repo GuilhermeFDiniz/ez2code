@@ -1,8 +1,21 @@
-.card-show {
-  max-width: 100%;
-  min-height: 100%;
+.card-box {
+  min-width: 100vh;
+  min-height: 100vh;
+  padding-top: 15px;
 }
 
-.card-box {
-  min-height: 600px;
+.card-show {
+  width: 100%;
+  height: 100%;
+}
+
+.card-name-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-details-saller-button{
+  // padding: 15px; ORGANIZAR TÍTULO PREÇO DESCRIÇÃO E BOTÃO
+  margin: 20px;
 }
