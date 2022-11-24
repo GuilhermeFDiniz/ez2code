@@ -1,10 +1,12 @@
+<div class='container'>
 <h1>Products</h1>
-
-
-<%@products.each do |product|%>
   <div class='card_org'>
+<%@products.each do |product|%>
+<div>
     <div class="card mb-3 me-3" style="width: 18rem;">
-      <img class="card-img-top" src="..." alt="Card image cap">
+    <%if product.photos.first%>
+      <%= cl_image_tag product.photos.first.key, class:"card-img-top" %>
+      <%end%>
       <div class="card-body">
         <h5 class="card-title"><%="#{product.name}"%></h5>
       </div>
@@ -15,6 +17,8 @@
       <div class="card-body">
       <%= link_to "Details", product_path(product), class: 'btn btn-primary' %>
     </div>
-
+    </div>
   </div>
+
 <%end%>
+</div>
