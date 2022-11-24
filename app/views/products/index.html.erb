@@ -1,13 +1,12 @@
 <h1>Products</h1>
-
-  <%@products.each do |product|%>
-<div class="card-product">
-    <%=link_to product_path(product) do%>
-      <div class="card-product-infos">
-        <h2 class="card-product-text"><%="Produto: #{product.name}"%></h2>
-        <h2 class="card-product-text"><%="Preço: R$ #{product.price}"%></h2>
-        <p><%="Vendedor: #{product.user.first_name}"%></p>
-      </div>
-    <%end%>
-</div>
-  <%end%>
+<%@products.each do |product|%>
+  <div class="card-product">
+      <%=link_to product_path(product) do%>
+        <div class="card-product-infos">
+          <h2 class="card-product-text"><%="Produto: #{product.name}"%></h2>
+          <h2 class="card-product-text"><%="Preço: #{number_to_currency(product.price)}"%></h2>
+          <p><%="Vendedor: #{product.user.first_name}"%></p>
+        </div>
+      <%end%>
+  </div>
+<%end%>
