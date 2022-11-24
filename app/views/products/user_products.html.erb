@@ -4,7 +4,8 @@
 <div>
 <%= product.name  %>
 <%= product.details %>
-<%= product.price %>
+<%= number_to_currency(product.price) %>
 <%= link_to 'edit', edit_product_path(product.id) %>
+<%= link_to 'delete', product_path(product.id), data: {turbo_method: :delete} %>
 </div>
 <% end %>
