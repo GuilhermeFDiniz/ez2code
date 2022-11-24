@@ -7,9 +7,7 @@ class SalesController < ApplicationController
     @product = Product.find(params[:product_id])
     @user = current_user
     @sale = Sale.new(product: @product, user: @user)
-    if @sale.save
-      redirect_to product_sale_path(@product, @sale)
-    end
+    redirect_to product_sale_path(@product, @sale) if @sale.save
   end
 
   def user_sales
