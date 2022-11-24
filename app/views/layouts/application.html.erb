@@ -9,7 +9,7 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
-  <body>
+ <body>
     <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
       <div class="container-fluid">
         <%= link_to root_path, class: "navbar-brand" do %>
@@ -43,7 +43,9 @@
           </div>
         </div>
       </div>
+ <div class='container'>
     <%= yield %>
+    </div>
     <%= render 'devise/shared/footer'%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
