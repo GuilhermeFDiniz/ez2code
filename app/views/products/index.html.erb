@@ -1,12 +1,20 @@
 <h1>Products</h1>
+
+
 <%@products.each do |product|%>
-  <div class="card-product">
-      <%=link_to product_path(product) do%>
-        <div class="card-product-infos">
-          <h2 class="card-product-text"><%="Produto: #{product.name}"%></h2>
-          <h2 class="card-product-text"><%="Preço: #{number_to_currency(product.price)}"%></h2>
-          <p><%="Vendedor: #{product.user.first_name}"%></p>
-        </div>
-      <%end%>
+  <div class='card_org'>
+    <div class="card mb-3 me-3" style="width: 18rem;">
+      <img class="card-img-top" src="..." alt="Card image cap">
+      <div class="card-body">
+        <h5 class="card-title"><%="#{product.name}"%></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+       <p><li class="list-group-item"><%="#{number_to_currency(product.price, unit: "R$")}"%></li></p>
+        <li class="list-group-item"><%="Vendido por #{product.user.first_name}"%></li>
+      </ul>
+      <div class="card-body">
+      <%= link_to "Details", product_path(product), class: 'btn btn-primary' %>
+    </div>
+
   </div>
 <%end%>

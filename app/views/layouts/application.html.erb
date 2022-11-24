@@ -9,9 +9,11 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
+
   <body>
     <%= render 'layouts/navbar' %>
     <%= yield %>
+    </div>
     <%= render 'devise/shared/footer'%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
