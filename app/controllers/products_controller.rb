@@ -2,7 +2,11 @@ class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
 
   def index
-    @products = Product.all
+    if params[:query].present?
+      @products = Product.search_by_all(params[:query])
+    else
+      @products = Product.all
+    end
   end
 
   def show
@@ -37,7 +41,7 @@ class ProductsController < ApplicationController
 
   def destroy
     @product.destroy
-    redirect_to root_path, notice: "Product was successfully destroyed."
+    redirect_to user_products_path, notice: "Product was successfully destroyed."
   end
 
   def user_products
@@ -51,6 +55,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :price, :details)
+    params.require(:product).permit(:name, :price, :details, photos: [])
   end
 end
