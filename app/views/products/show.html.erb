@@ -3,7 +3,28 @@
   <div class="card mb-3 card-show">
     <div class="row g-0">
       <div class="col-md-6">
-        <%= cl_image_tag @product.photos.first.key, class:"img-fluid rounded-start", crop: :fill %>
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+          <div class="carousel-indicators">
+            <% @product.photos.each_with_index do |photo, index| %>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="<%= index %>" class="<%= "active" if index.zero? %>" aria-current="true" aria-label="Slide 1"></button>
+            <% end %>
+          </div>
+            <div class="card-img carousel-inner">
+              <% @product.photos.each_with_index do |photo, index| %>
+                <div class="carousel-item <%= "active" if index.zero? %>">
+                  <%= cl_image_tag photo.key, class: "img-fluid", style: "height: 600px; width: 100%; background-size: cover;" %>
+                </div>
+              <% end %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
       </div>
       <div class="card-body d-grid gap-3 col-md-6">
         <div class="card-name-price d-grid gap-3">
@@ -19,6 +40,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
