@@ -1,36 +1,36 @@
-<div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-      <div class="container-fluid">
-        <%= link_to root_path, class: "navbar-brand" do %>
-          <%= image_tag "https://i.pinimg.com/564x/09/17/04/0917045fcee27f48e768680d1f800577.jpg" %>
-        <% end %>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-          <div class="search-bar">
-            <%= render "layouts/search" %>
-          </div>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav me-auto">
-          <% if user_signed_in? %>
-            <li class="nav-item active">
-              <%= link_to current_user.first_name, root_path, class: "nav-link" %>
-            </li>
-            <li class="nav-item dropdown">
-              <%= image_tag "https://i.pinimg.com/564x/a5/d1/bd/a5d1bd08033555b79c675685e2dff79f.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
-              <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
-                <%= link_to "Sell a Product", new_product_path, class: "dropdown-item"  %>
-                <%= link_to "My Products", user_products_path, class: "dropdown-item"  %>
-                <%= link_to "My Orders", user_sales_path, class: "dropdown-item"  %>
-              </div>
-            </li>
-          <% else %>
-            <li class="nav-item">
-              <%= link_to 'Login', new_user_session_path, class: "btn btn-secondary ms-5" %>
-              <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary" %>
-            </li>
-          <% end %>
-          </ul>
-          </div>
-        </div>
+  <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
+    <div class="container-fluid">
+      <%= link_to root_path, class: "navbar-brand" do %>
+        <%= image_tag "https://i.pinimg.com/564x/09/17/04/0917045fcee27f48e768680d1f800577.jpg" %>
+      <% end %>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto">
+        <%= render "layouts/search" %>
+        <%= link_to "Apps for Sale", products_path, class: 'btn btn-flat' %>
+        <% if user_signed_in? %>
+          <li class="nav-item active">
+            <%= link_to "Hello #{current_user.first_name}", root_path, class: "nav-link" %>
+          </li>
+          <li class="nav-item dropdown">
+            <%= image_tag "https://i.pinimg.com/564x/a5/d1/bd/a5d1bd08033555b79c675685e2dff79f.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
+            <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+              <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+              <%= link_to "Sell a Product", new_product_path, class: "dropdown-item"  %>
+              <%= link_to "My Products", user_products_path, class: "dropdown-item"  %>
+              <%= link_to "My Orders", user_sales_path, class: "dropdown-item"  %>
+              <%= link_to "My Sales", my_sales_path, class: "dropdown-item"  %>
+            </div>
+          </li>
+        <% else %>
+        <li class="nav-item">
+          <%= link_to 'Login', new_user_session_path, class: "btn btn-secondary ms-5" %>
+          <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary" %>
+        </li>
+      <% end %>
+        </ul>
       </div>
+    </div>
+  </div>
