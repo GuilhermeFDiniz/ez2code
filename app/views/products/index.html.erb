@@ -1,11 +1,24 @@
-<h1>Index Product</h1>
-<ul>
-  <%@products.each do |product|%>
-    <li><%=link_to product_path(product) do%>
-      <p><%="Produto: #{product.name}"%></p>
-      <p><%="Preço: R$#{product.price}"%></p>
-      <p><%="Vendedor: #{product.user.first_name}"%></p>
-    </li>
-    <%end%>
-  <%end%>
-</ul>
+<div class='container'>
+<h1>Products</h1>
+  <div class='card_org'>
+<%@products.each do |product|%>
+<div>
+    <div class="card mb-3 me-3" style="width: 18rem;">
+    <%if product.photos.first%>
+      <%= cl_image_tag product.photos.first.key, class:"card-img-top" %>
+      <%end%>
+      <div class="card-body">
+        <h5 class="card-title"><%="#{product.name}"%></h5>
+      </div>
+      <ul class="list-group list-group-flush">
+       <p><li class="list-group-item"><%="#{number_to_currency(product.price, unit: "R$")}"%></li></p>
+        <li class="list-group-item"><%="Vendido por #{product.user.first_name}"%></li>
+      </ul>
+      <div class="card-body">
+      <%= link_to "Details", product_path(product), class: 'btn btn-primary' %>
+    </div>
+    </div>
+  </div>
+
+<%end%>
+</div>

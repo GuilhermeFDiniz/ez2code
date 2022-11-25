@@ -10,3 +10,10 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+@import "components/homecarousel";
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
