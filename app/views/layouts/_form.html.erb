@@ -2,14 +2,14 @@
     <%= f.error_notification %>
     <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-    <div class="form-inputs">
+    <div class="form-inputs d-block rounded-4 p-2 bg-secondary text-white m-5">
       <%= f.input :name %>
       <%= f.input :price %>
       <%= f.input :details %>
        <%= f.input :photos, as: :file, input_html: { multiple: true } %>
     </div>
 
-    <div class="form-actions">
-      <%= f.button :submit, class: 'btn btn-primary' %>
+    <div class="form-actions_form">
+      <%= f.button :submit, class: 'btn btn-secondary ms-5 mb-3 rounded-4' %>
     </div>
   <% end %>
