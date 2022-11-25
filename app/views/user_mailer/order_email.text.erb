@@ -1,5 +1,8 @@
 Congratulations for the purchase!, <%= @user.first_name %>
 ===============================================
-
- Here is all the information about your order:
-      Product:
+      Here is all the information about your order:
+      Product name: <%= @product.name %>
+      Details: <%= @product.details %>
+      Price: <%= @product.price %>
+      Vendor: <%= @product.user.first_name %>
+      <%= cl_image_tag @product.photos.first.key, height: 300, width: 400, crop: :fill %>
