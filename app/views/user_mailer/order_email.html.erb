@@ -6,10 +6,10 @@
     <h1>Congratulations for the purchase, <%= @user.first_name %></h1>
     <h3>Here is all the information about your order:</h3>
     <p>
-      Product name: <%= @product.name %>
-      Details: <%= @product.details %>
-      Price: <%= @product.price %>
-      Vendor: <%= @product.user.first_name %>
+     <br> <strong>Product name:</strong>  <%= @product.name %>
+     <br> <strong>Seller:</strong> <%= @product.user.first_name %>
+     <br> <strong>Price:</strong> <%= @product.price %>
+     <br> <strong>Details:</strong> <%= @product.details %>
     </p>
     <%= cl_image_tag @product.photos.first.key, height: 300, width: 400, crop: :fill %>
   </body>
