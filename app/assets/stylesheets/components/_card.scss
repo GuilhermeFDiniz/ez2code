@@ -9,6 +9,7 @@ grid-gap: 30px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   display: flex;
   border-radius: 15px;
+  height: 400px;
 }
 
 // .card img {
@@ -16,6 +17,18 @@ grid-gap: 30px;
 //   width: 120px;
 //   object-fit: cover;
 // }
+
+.card-body {
+  max-height: 300px;
+  height: 20%;
+
+}
+
+.card-img-top {
+  max-height: 300px;
+  height: 40%;
+}
+
 
 .card h5 {
   font-size: 16px;
