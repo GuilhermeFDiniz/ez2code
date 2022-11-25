@@ -9,13 +9,34 @@
   height: 100%;
 }
 
-.card-name-price {
+.card-body {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  flex-direction: column;
+  align-items: space-between;
 }
 
-.card-details-saller-button{
-  // padding: 15px; ORGANIZAR TÍTULO PREÇO DESCRIÇÃO E BOTÃO
-  margin: 20px;
+.card-name-price h2 {
+  font-size: 38px;
+  font-weight: bolder;
+}
+
+.card-button {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.button {
+  color: white;
+  font-size: 30px;
+  padding: 15px 100px;
+  border-radius: 4px;
+  background: #670BFF;
+  transition: background 0.3s ease;
+}
+
+.button:hover {
+  text-decoration: none;
+  color: white;
+  background-color: #390889;
 }
