@@ -11,11 +11,16 @@
   </head>
 
   <body>
+  <div>
     <%= render 'layouts/navbar' %>
+  </div>
+    <div>
     <%= yield %>
     </div>
+    <div>
     <%= render 'devise/shared/footer'%>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    </div>
   </body>
 </html>
