@@ -16,16 +16,16 @@
             <li class="nav-item dropdown">
               <%= image_tag "https://i.pinimg.com/564x/a5/d1/bd/a5d1bd08033555b79c675685e2dff79f.jpg", class: "avatar dropdown-toggle", id: "navbarDropdown", data: { bs_toggle: "dropdown" }, 'aria-haspopup': true, 'aria-expanded': false %>
               <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                <%= button_to 'LogOut', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+                <%= button_to 'Log Out', destroy_user_session_path, method: :delete, class: "dropdown-item" %>
                 <%= link_to "Sell a Product", new_product_path, class: "dropdown-item"  %>
                 <%= link_to "My Products", user_products_path, class: "dropdown-item"  %>
-                <%= link_to "My orders", user_sales_path, class: "dropdown-item"  %>
+                <%= link_to "My Orders", user_sales_path, class: "dropdown-item"  %>
               </div>
             </li>
           <% else %>
             <li class="nav-item">
-              <%= link_to 'Login', new_user_session_path, class: "dropdown-item" %>
-              <%= link_to 'SignUp', new_user_registration_path, class: "dropdown-item" %>
+              <%= link_to 'Login', new_user_session_path, class: "btn btn-secondary ms-5" %>
+              <%= link_to 'Sign Up', new_user_registration_path, class: "btn btn-primary" %>
             </li>
           <% end %>
           </ul>
