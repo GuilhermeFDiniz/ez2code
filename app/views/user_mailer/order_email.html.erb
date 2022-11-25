@@ -3,10 +3,10 @@
     <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
   </head>
   <body>
-    <h1>Congratulations for the purchase, <%= @user.first_name %></h1>
+    <h1>Congratulations for the purchase, <%= @user.first_name %> <%= @user.last_name %>!</h1>
     <h3>Here is all the information about your order:</h3>
     <p>
-     <br> <strong>Product name:</strong>  <%= @product.name %>
+     <br> <strong>Product:</strong>  <%= @product.name %>
      <br> <strong>Seller:</strong> <%= @product.user.first_name %>
      <br> <strong>Price:</strong> <%= @product.price %>
      <br> <strong>Details:</strong> <%= @product.details %>
