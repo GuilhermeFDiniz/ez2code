@@ -1,9 +1,11 @@
-<div class = container>
-<div class="flash flash-success alert alert-dismissible fade show" role="alert">
-  <span><strong>Payment Confirmed!</strong> 🎉 Congratulations, <%=current_user.first_name%>,
-    you just purchased the <%=@sale.product.name%> from <%=@sale.product.user.first_name%> for <%=number_to_currency(@sale.product.price)%>.</span>
-  <a data-bs-dismiss="alert" aria-label="Close">
-    <i class="fas fa-times"></i>
-  </a>
-</div>
+<div class = 'container d-flex justify-content-center mt-4'>
+  <div class="card" style="width: 20rem;">
+    <div class="card-body text-center">
+      <h4 class="card-title "><strong>Congratulations for your purchase, <%=current_user.first_name%>!</strong></h4>
+      <p class="card-text"><%=@sale.product.name%>  -  <%=number_to_currency(@sale.product.price)%></p>
+      </div>
+    <%if @sale.product.photos.first%>
+      <%= cl_image_tag @sale.product.photos.first.key, class:"card-img-bottom" %>
+    <%end%>
+  </div>
 </div>

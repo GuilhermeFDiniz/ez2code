@@ -1,6 +1,7 @@
 .card_org {
-display: flex;
-flex-direction: row;
+display: grid;
+grid-template-columns: 1fr 1fr 1fr;
+grid-gap: 30px;
 }
 
 .card {
